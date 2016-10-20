@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.layout_home');
-});
+Route::get('/', 'FrontendController@index');

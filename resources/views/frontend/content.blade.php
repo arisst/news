@@ -2,66 +2,36 @@
 	<div id="main-content">
 		<div class="primary">
 			<section>
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-8.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-2.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-3.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-4.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-5.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
-				<article class="entry-item box-hover clearfix">
-					<a href="detail.html"><img class="hover-effect responsive-img" src="{{ asset('template/placeholders/244x117/244x117-6.jpg') }}" alt="" /></a>
-					<div class="entry-content">
-						<span class="entry-category">in:&nbsp;</span>
-						<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-						<h3 class="entry-title"><a href="detail.html">There are many vaiations</a></h3>
-						<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div><!--end:entry-content-->
-				</article><!--end:entry-item-->
+
+				@foreach ($news as $k => $v)
+					<article class="entry-item box-hover clearfix">
+						<a href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
+							<img class="hover-effect responsive-img" src="{{ $v['image'] }}" alt="" />
+						</a>
+						<div class="entry-content">
+							<span class="entry-category">in:&nbsp;</span>
+							<a class="entry-category" href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
+								{{ $v['category'] }}
+							</a>
+							<span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;
+								{{ $v['date'] }}
+							</span>
+							<h3 class="entry-title">
+								<a href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
+									{{ $v['title'] }}
+								</a>
+							</h3>
+							<p>
+								{{ $v['resume'] }}
+							</p>
+							<span class="entry-author">by:&nbsp;</span>
+							<a class="entry-author" href="#">
+								{{ $v['author'] }}
+							</a>
+						</div><!--end:entry-content-->
+					</article><!--end:entry-item-->
+				@endforeach
+
 				<ul class="pagination box-hover clearfix">
 					<li><a href="#" class="previous-page paging">Previous</a></li>
 					<li><a href="#" class="paging">1</a></li>
