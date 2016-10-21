@@ -3,36 +3,27 @@
 		<div class="primary">
 			<article class="entry-item">
 				<header>
-					<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					<span class="entry-category">in:&nbsp;</span><a class="entry-category" href="#">Fashion</a>
-					<span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-					<h1 class="entry-title">Who made dummy text?</h1>
-				</header>
-				<img class="responsive-img feature-img" src="{{ asset('template/placeholders/slider/slide-1.jpg') }}" alt="" />
-				<p>Vivamus. Sagittis facilisis hymenaeos scelerisque ad scelerisque. Massa felis odio rhoncus ligula sollicitudin Magna. Laoreet. Vel tristique tellus nam quis curae; eu nulla, eleifend viverra sagittis nibh sollicitudin tempus auctor est conubia potenti justo Elit morbi augue est Mus Mollis imperdiet sem. Lorem lectus nisi elit curabitur orci justo feugiat. Magna parturient lobortis nibh praesent curabitur, magna consequat, feugiat sociis iaculis fringilla nam. Eget id mus elementum rhoncus arcu, dapibus. Suscipit enim habitant augue libero. Sagittis magnis orci leo nullam pretium rhoncus viverra lacinia. Sagittis odio tincidunt nunc, montes eu leo. Varius dictumst velit pharetra nibh risus feugiat. Varius facilisis non class mollis arcu porta Aliquam a condimentum euismod gravida turpis curae; viverra facilisis vulputate tellus ultricies scelerisque platea accumsan. Vestibulum conubia tempus velit faucibus gravida hendrerit. Convallis nostra habitasse arcu hymenaeos </p>
-				<strong>Morbi Non Ridiculus</strong>
-				<p>Eleifend gravida gravida sociis class sociis metus commodo justo Malesuada mauris. Dis quisque cubilia lorem nonummy posuere, molestie pellentesque urna semper. Convallis aliquet augue pellentesque blandit platea laoreet. Eu lobortis vulputate dui magnis mi nam praesent Tristique feugiat ridiculus pede sodales dignissim. Ad.</p>
-				<p>Justo tellus porttitor pharetra vitae, tempor sollicitudin nibh libero eleifend inceptos hendrerit urna cursus dapibus curabitur hendrerit lacinia. Lacinia. Cum blandit Arcu mi.</p>
-				<p>Parturient taciti lorem praesent odio quam donec hac vehicula a vestibulum facilisis pharetra fusce. Lobortis adipiscing eleifend tellus ultricies. Turpis porta consequat lacinia odio, convallis.</p>
-				<p>Massa magna arcu tempus. Auctor proin eleifend aliquam vehicula congue sed ullamcorper per varius morbi etiam faucibus Sociis. Scelerisque.</p>
+					<span class="entry-author">by:&nbsp;</span>
 
-				<p>Ridiculus neque dictum cras. Nostra pharetra magna viverra nostra. Habitasse quis cum nullam. Vel. Consequat sed varius leo. Senectus est vel. Dolor laoreet.</p>
-				<p>Tristique lacinia mattis elit dignissim penatibus adipiscing. Commodo imperdiet adipiscing duis venenatis taciti sollicitudin hac ipsum at posuere massa congue cras. Nisi curabitur malesuada vulputate vivamus id. Laoreet. Ullamcorper tempus enim torquent. Risus. Semper gravida felis. Tempus sociis risus est lacus libero. Faucibus eros.</p>
-				<blockquote>
-					Massa aptent. Nisl enim vestibulum ridiculus conubia rhoncus nulla imperdiet vehicula lorem torquent eget nisi. Tellus molestie a facilisis tellus nibh ad auctor mattis orci sodales. Massa pharetra. Magnis. Nec cras ornare vulputate duis etiam condimentum parturient. Velit ultricies Lacinia per bibendum Venenatis inceptos, feugiat turpis purus id. Ligula lacus tristique augue taciti vivamus vulputate. Lacus arcu vehicula lobortis hac penatibus egestas. Id massa euismod elit euismod at, placerat parturient ligula lobortis tristique. Neque per condimentum hendrerit nisi habitasse erat.
-				</blockquote>
-				<strong>Urna At Posuere Quis</strong>
-				<p>Lacinia auctor rutrum diam cum nam ante condimentum ridiculus accumsan diam iaculis Erat libero lacinia fermentum duis convallis sapien bibendum. Amet sodales vehicula, nulla curae; odio felis.</p>
-				<strong>Sollicitudin Porta At Suscipit Mus Tellus Dolor Placerat</strong>
-				<p>Lorem habitasse nulla cum faucibus turpis. Volutpat placerat ac porta elementum non quis porttitor penatibus mi ligula natoque at sociosqu diam dis praesent nonummy. Aliquet. Odio.</p>
-				<p>Habitasse. Mus venenatis adipiscing. Suscipit elementum odio mattis inceptos curae; luctus sagittis cursus praesent ultrices luctus commodo inceptos, mattis venenatis magnis Fusce urna, montes pellentesque libero lorem praesent varius.</p>
-				<p>Pharetra leo malesuada quis interdum donec ornare semper volutpat. Adipiscing ullamcorper fames libero, mollis aptent vivamus. Eleifend interdum lacus lacinia pulvinar potenti. Eleifend sem euismod pede cum aenean tempus libero condimentum vitae mi orci quisque malesuada blandit vitae lorem cras convallis.</p>
-				<ul class="star-list">
-					<li>Fermentum rutrum. Orci potenti curae.</li>
-					<li>Suspendisse hendrerit eros quis convallis, pharetra.</li>
-					<li>Curabitur non taciti. Quis hymenaeos dictum nec.</li>
-					<li>Lobortis tellus blandit tempor metus egestas interdum bibendum.</li>
-				</ul><!--end:star-list-->
+					<a class="entry-author" href="#">{{ $news['author'] }}</a>
+
+					<span class="entry-category">in:&nbsp;</span>
+
+					<a class="entry-category" href="#">{{ $news['category'] }}</a>
+
+					<span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;
+
+						{{ $news['date'] }}
+
+					</span>
+					
+					<h1 class="entry-title">{{ $news['title'] }}</h1>
+				</header>
+
+				<img class="responsive-img feature-img" src="{{ $news['image'] }}" alt="" />
+
+				{{{ $news['content'] }}}
+
 			<div class="clear"></div>
 			</article>
 			<div class="social-share clearfix">

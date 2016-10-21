@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'FrontendController@index');
+
+Route::get('/read/{id}/{slug}', 'FrontendController@detail');
