@@ -148,7 +148,10 @@
                                     <a href="#" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.signout') }}</a>
+                                    <form class="" action="{{url('logout')}}" method="post">
+                                        {{ csrf_field() }}
+                                        <input type="submit" class="btn btn-default btn-flat" value="Logout">
+                                    </form>
                                 </div>
                             </li>
                         </ul>

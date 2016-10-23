@@ -5,41 +5,37 @@
 
 				@foreach ($news as $k => $v)
 					<article class="entry-item box-hover clearfix">
-						<a href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
-							<img class="hover-effect responsive-img" src="{{ $v['image'] }}" alt="" />
+						<a href="{{ url('read',[ $v->id,$v->slug ]) }}">
+							<img class="hover-effect responsive-img" src="{{ $v->image }}" alt="" />
 						</a>
 						<div class="entry-content">
 							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
-								{{ $v['category'] }}
+							<a class="entry-category" href="{{ url('read',[ $v->id,$v->slug ]) }}">
+								{{ $v->category_name }}
 							</a>
 							<span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;
-								{{ $v['date'] }}
+								{{ $v->created_at }}
 							</span>
 							<h3 class="entry-title">
-								<a href="{{ url('read',[ $v['id'],$v['slug'] ]) }}">
-									{{ $v['title'] }}
+								<a href="{{ url('read',[ $v->id,$v->slug ]) }}">
+									{{ $v->title }}
 								</a>
 							</h3>
 							<p>
-								{{ $v['resume'] }}
+								{{ $v->resume }}
 							</p>
 							<span class="entry-author">by:&nbsp;</span>
 							<a class="entry-author" href="#">
-								{{ $v['author'] }}
+								{{ $v->author }}
 							</a>
 						</div><!--end:entry-content-->
 					</article><!--end:entry-item-->
 				@endforeach
 
 				<ul class="pagination box-hover clearfix">
-					<li><a href="#" class="previous-page paging">Previous</a></li>
-					<li><a href="#" class="paging">1</a></li>
-					<li><a href="#" class="paging">2</a></li>
-					<li class="current"><a href="#" class="paging">3</a></li>
-					<li><a href="#" class="paging">4</a></li>
-					<li><a href="#" class="next-page paging">Next</a></li>
+					{!! $news->links() !!}
 				</ul><!--end:pagination-->
+				
 			</section>
 		</div><!--end:primary-->
 		<div class="secondary">

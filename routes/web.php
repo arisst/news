@@ -14,3 +14,9 @@
 Route::get('/', 'FrontendController@index');
 
 Route::get('/read/{id}/{slug}', 'FrontendController@detail');
+
+// halaman admin
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::resource('news', 'NewsController');
+    Route::resource('category', 'CategoryController');
+});

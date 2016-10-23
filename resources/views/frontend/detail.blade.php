@@ -5,24 +5,24 @@
 				<header>
 					<span class="entry-author">by:&nbsp;</span>
 
-					<a class="entry-author" href="#">{{ $news['author'] }}</a>
+					<a class="entry-author" href="#">{{ $news->author }}</a>
 
 					<span class="entry-category">in:&nbsp;</span>
 
-					<a class="entry-category" href="#">{{ $news['category'] }}</a>
+					<a class="entry-category" href="#">{{ $news->category_name }}</a>
 
 					<span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;
 
-						{{ $news['date'] }}
+						{{ $news->created_at }}
 
 					</span>
-					
-					<h1 class="entry-title">{{ $news['title'] }}</h1>
+
+					<h1 class="entry-title">{{ $news->title }}</h1>
 				</header>
 
-				<img class="responsive-img feature-img" src="{{ $news['image'] }}" alt="" />
+				<img class="responsive-img feature-img" src="{{ $news->image }}" alt="" />
 
-				{{{ $news['content'] }}}
+				{{{ $news->content }}}
 
 			<div class="clear"></div>
 			</article>
